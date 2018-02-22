@@ -1,6 +1,6 @@
 # Trezor-style PIN entry for GPG
 
-This is an alternate PIN entry for use with [trezor-agent]() or for people with number-only PINs.  It displays a grid of unlabeled buttons and supports configurable keyboard mappings, by default allowing entry via these keys:
+This is an alternate PIN entry for use with [trezor-agent](https://github.com/romanz/trezor-agent/) or for people with number-only PINs.  It displays a grid of unlabeled buttons and supports configurable keyboard mappings, by default allowing entry via these keys:
 
 ```
 w e r      u i o      7 8 9
@@ -12,7 +12,7 @@ x c v      m , .      1 2 3
 
 1. Run `pip install trezor-gpg-pinentry-tk`
 2. Find where it's installed with by running `which trezor-gpg-pinentry-tk`
-3. Add this line to `$GPGHOME/gpg-agent.conf`: `pinentry-program /path/to/trezor_gpg`
+3. Add this line to `$GPGHOME/gpg-agent.conf`: `pinentry-program /path/to/trezor-gpg-pinentry-tk`
 4. Run `echo RELOADAGENT | gpg-connect-agent` or restart your computer
 
 ### Configuration
