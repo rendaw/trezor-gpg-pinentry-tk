@@ -20,7 +20,7 @@ with open('setup.py', 'w') as dest:
         oldsetup,
         flags=re.M))
 subprocess.check_call([
-    'git', 'commit', 'setup.py', '-m', 'Version {}'.format(
+    'git', 'commit', 'setup.py', '--allow-empty', '-m', 'Version {}'.format(
         args.version)
 ])
 subprocess.check_call(['git', 'tag', 'v{}'.format(args.version)])
