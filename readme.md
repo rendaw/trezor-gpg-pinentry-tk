@@ -12,6 +12,8 @@ s d f      j k l      4 5 6
 x c v      m , .      1 2 3
 ```
 
+Press `escape` to cancel, `backspace` to clear everything you've entered, and `enter` to submit the PIN.
+
 ### Installation
 
 1. Run `pip install trezor-gpg-pinentry-tk`
