@@ -1,6 +1,10 @@
 # Trezor-style PIN entry for GPG
 
-This is an alternate PIN entry for use with [trezor-agent](https://github.com/romanz/trezor-agent/) or for people with number-only PINs.  It displays a grid of unlabeled buttons and supports configurable keyboard mappings, by default allowing entry via these keys:
+This is an alternate PIN entry for use with [trezor-agent](https://github.com/romanz/trezor-agent/) or for people with number-only PINs.  It displays a grid of unlabeled buttons and supports configurable keyboard mappings.
+
+<img src="screenshot.jpg">
+
+By default you can use any of these key grids to enter the PIN:
 
 ```
 w e r      u i o      7 8 9
