@@ -29,3 +29,4 @@ Set these environment variables on your `gpg-agent` daemon, by overriding `/usr/
 * **PINENTRY_TREZOR_DONT_FLASH** = `1`.  Don't show which keypad button was pressed when using the keyboard.
 * **PINENTRY_TREZOR_KEYSET** = `123456789`.  Use this letter grid for keyboard entry.
 * **PINENTRY_TREZOR_DONT_EXPLAIN** = `1`.  Don't explain or show the grid when entering via TTY.
+* **PINENTRY_TREZOR_FORCE_MESSAGE** = `My prompt message:`.  Use this prompt message instead of the GPG provided prompt.

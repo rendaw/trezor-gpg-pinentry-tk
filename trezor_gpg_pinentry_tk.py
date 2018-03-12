@@ -15,6 +15,7 @@ log_enabled = os.environ.get('PINENTRY_TREZOR_LOG_PATH')
 dontflash = os.environ.get('PINENTRY_TREZOR_DONT_FLASH') == '1'
 conf_keysets = os.environ.get('PINENTRY_TREZOR_KEYSET')
 dont_explain = os.environ.get('PINENTRY_TREZOR_DONT_EXPLAIN') == '1'
+force_message = os.environ.get('PINENTRY_TREZOR_FORCE_MESSAGE')
 
 
 all_keysets = ['123456789']
@@ -252,6 +253,8 @@ def main():
             elif command == 'SETKEYINFO':
                 pass
             elif command == 'GETPIN':
+                if force_message:
+                    message = force_message
                 if os.environ.get('DISPLAY'):
                     value = tk_entry(message, error)
                 else:
