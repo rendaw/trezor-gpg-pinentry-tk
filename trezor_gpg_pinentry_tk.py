@@ -251,6 +251,8 @@ def main():
             elif command == 'OPTION':
                 if rest.startswith('ttyname='):
                     tty = rest.split('=', 1)[-1]  # noqa
+                elif rest.startswith('display='):
+                    os.environ['DISPLAY'] = rest.split('=', 1)[-1]
             elif command == 'GETINFO':
                 pass
             elif command == 'SETKEYINFO':
