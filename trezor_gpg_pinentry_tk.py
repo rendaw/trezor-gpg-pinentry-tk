@@ -108,7 +108,7 @@ def tty_entry(tty_name, prompt):
         return passwd
 
 
-def tk_entry(message, error):
+def tk_entry(title, message, error):
     root = tk.Tk()
 
     pin = []
@@ -154,7 +154,7 @@ def tk_entry(message, error):
             root.bind(k, lambda e, i=i: entry(i))
 
     frame = tk.Frame(root)
-    frame.master.title('GPG: Enter Trezor PIN')
+    frame.master.title(title)
     frame.pack()
     tk.Label(
         frame,
@@ -223,6 +223,7 @@ def main():
     try:
         resp('OK')
 
+        title = 'GPG: Enter Trezor PIN'
         message = ''
         error = ''
         tty = '/dev/tty'
@@ -245,6 +246,8 @@ def main():
                 message = urllib.parse.unquote(rest)
             elif command == 'SETERROR':
                 error = rest
+            elif command == 'SETTITLE':
+                title = rest
             elif command == 'OPTION':
                 if rest.startswith('ttyname='):
                     tty = rest.split('=', 1)[-1]  # noqa
@@ -256,7 +259,7 @@ def main():
                 if force_message:
                     message = force_message
                 if os.environ.get('DISPLAY'):
-                    value = tk_entry(message, error)
+                    value = tk_entry(title, message, error)
                 else:
                     prompt = message
                     if error:
@@ -279,7 +282,7 @@ def main():
             elif command == 'BYE':
                 pass
             else:
-                raise RuntimeError('Unknown command [{}] args [{}]'.format(
+                log('WARNING: Unknown command [{}] args [{}]'.format(
                     command, rest))
             resp('OK')
     except:  # noqa
