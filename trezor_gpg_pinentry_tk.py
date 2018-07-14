@@ -9,6 +9,7 @@ import tkinter as tk
 import io
 import termios
 import contextlib
+import datetime
 from getpass import _raw_input, fallback_getpass
 
 log_enabled = os.environ.get('PINENTRY_TREZOR_LOG_PATH')
@@ -38,13 +39,14 @@ def resp(text):
 def log(text):
     if not _log:
         return
-    _log.write(text + '\n')
+    _log.write('[{}] {}\n'.format(datetime.datetime.now().isoformat(), text))
     _log.flush()
 
 
 def log_e():
     if not _log:
         return
+    _log.write('[{}] '.format(datetime.datetime.now().isoformat()))
     traceback.print_exc(file=_log)
     _log.write('\n')
     _log.flush()

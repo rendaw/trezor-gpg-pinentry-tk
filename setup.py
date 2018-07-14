@@ -16,9 +16,7 @@ setup(
     classifiers=[
         'License :: OSI Approved :: BSD License',
     ],
-    install_requires=[
-        'trezor==0.9.0',
-    ],
+    install_requires=[],
     py_modules=['trezor_gpg_pinentry_tk'],
     entry_points={
         'console_scripts': [
