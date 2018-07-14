@@ -1,6 +1,6 @@
 from setuptools import setup
 
-url = 'https://github.com/rendaw/trezor-gpg-pinentry-tk'
+url = 'https://gitlab.com/rendaw/trezor-gpg-pinentry-tk'
 GEN_version = '0.0.6'
 
 setup(
