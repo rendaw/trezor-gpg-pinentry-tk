@@ -1,7 +1,7 @@
 from setuptools import setup
 
 url = 'https://gitlab.com/rendaw/trezor-gpg-pinentry-tk'
-GEN_version = '0.0.7'
+GEN_version = '0.0.8'
 
 try:
     with open('readme.md', 'r') as readme_source:
