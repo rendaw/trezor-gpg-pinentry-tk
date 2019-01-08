@@ -3,6 +3,12 @@ from setuptools import setup
 url = 'https://gitlab.com/rendaw/trezor-gpg-pinentry-tk'
 GEN_version = '0.0.7'
 
+try:
+    with open('readme.md', 'r') as readme_source:
+        readme = readme_source.read()
+except FileNotFoundError:
+    readme = ''
+
 setup(
     name='trezor-gpg-pinentry-tk',
     version=GEN_version,
@@ -12,7 +18,7 @@ setup(
     download_url=url + '/tarball/v{}'.format(GEN_version),
     license='BSD',
     description='A pinentry for GPG with Trezor',
-    long_description=open('readme.md', 'r').read(),
+    long_description=readme,
     classifiers=[
         'License :: OSI Approved :: BSD License',
     ],
