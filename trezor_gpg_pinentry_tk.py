@@ -4,7 +4,7 @@ import traceback
 import argparse
 import os
 import os.path
-import urllib
+import urllib.parse
 import tkinter as tk
 import io
 import termios
